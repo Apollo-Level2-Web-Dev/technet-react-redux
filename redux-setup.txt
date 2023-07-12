@@ -1,0 +1,18 @@
+For Local State Management
+
+Step 1 => Setup Store.
+Step 2 => Connect redux store with react in main.tsx (Provider).
+Step 3 => Setup the custome hook (Only relatable for TS usage).
+Step 4 => Create Slice (Name, initalState, reducer).
+Step 5 => Connect your slice with the redux store.
+
+For consuming the data 
+
+useAppSelector -> State 
+useAppDispatch -> User Action
+
+For RTK Query
+
+Step 1 => Create Api (name, baseQuery, endpoints).
+Step 2 => Connect to the store.
+Step 3 => Setup your endpoints.

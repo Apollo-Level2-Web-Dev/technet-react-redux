@@ -2,10 +2,10 @@ import { IProduct } from '@/types/globalTypes';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface ICartProduct {
-  product: IProduct[];
+  products: IProduct[];
 }
 const initialState: ICartProduct = {
-  product: [],
+  products: [],
 };
 
 export const cartSlice = createSlice({
@@ -13,7 +13,14 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addtoCart: (state, action: PayloadAction<IProduct>) => {
-      state.product.push(action.payload);
+      const existing = state.products.find(
+        (product) => product._id === action.payload._id
+      );
+      if (existing) {
+        existing.quantity = existing.quantity + 1!;
+      } else {
+        state.products.push({ ...action.payload, quantity: 1 });
+      }
     },
   },
 });

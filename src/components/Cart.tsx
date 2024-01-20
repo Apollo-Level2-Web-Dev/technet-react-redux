@@ -12,12 +12,12 @@ import {
   HiOutlineTrash,
 } from 'react-icons/hi';
 import { Button } from './ui/button';
-import { IProduct } from '@/types/globalTypes';
+import { useAppSelector } from '@/redux/hook';
 
 export default function Cart() {
   //! Dummy data
+  const { products } = useAppSelector((state) => state.addtoCart);
 
-  const products: IProduct[] = [];
   const total = 0;
 
   //! **
@@ -47,8 +47,7 @@ export default function Cart() {
                 <h1 className="text-2xl self-center">{product?.name}</h1>
                 <p>Quantity: {product.quantity}</p>
                 <p className="text-xl">
-                  Total Price: {(product.price * product.quantity!).toFixed(2)}{' '}
-                  $
+                  Total Price: {(product.price * product.quantity!).toFixed(2)}$
                 </p>
               </div>
               <div className="border-l pl-5 flex flex-col justify-between">

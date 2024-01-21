@@ -1,6 +1,6 @@
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
-import { useSingleProductQuery } from '@/redux/api/apiSlice';
+import { useSingleProductQuery } from '@/redux/feature/product/productApi/productApi';
 import { useParams } from 'react-router-dom';
 
 export default function ProductDetails() {

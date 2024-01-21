@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 
+//  firebase authetication
 interface IUserState {
   user: {
     email: string | null;
